@@ -7,6 +7,7 @@ const PhoneNumber = () => {
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isclicked,setIsClicked] = useState(false);
+  const [message, setMessage] = useState("")
 
   const handlePhoneNumber  = (e) => {
       setPhoneNumber(e.target.value)
@@ -25,7 +26,7 @@ const PhoneNumber = () => {
 
 
   const onOtpSubmit = (e)=>{
-    console.log("Login Successful");
+    setMessage("Login Successful.");
   }
 
   return (
@@ -41,6 +42,7 @@ const PhoneNumber = () => {
           <div>
             <h3>Enter the otp sent to {phoneNumber}</h3> 
             <OtpLogin length={4} onOtpSubmit={onOtpSubmit}/>
+            <div>{message}</div>
           </div>
         }
     </div>
